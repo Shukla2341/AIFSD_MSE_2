@@ -3,87 +3,133 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
-/* Center layout */
+/* Background */
 body {
-  background: #f4f6f8;
+  background: linear-gradient(135deg, #dfe9f3, #ffffff);
 }
 
-/* Container */
+/* Container (Login/Register) */
 .container {
-  width: 400px;
+  width: 380px;
   margin: 80px auto;
-  padding: 25px;
+  padding: 30px;
   background: white;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.container:hover {
+  transform: translateY(-5px);
 }
 
 /* Heading */
 h2 {
   text-align: center;
   margin-bottom: 20px;
+  color: #333;
 }
 
 /* Inputs */
 input, select {
   width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  border-radius: 5px;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
   border: 1px solid #ccc;
+  outline: none;
+  transition: 0.2s;
+}
+
+input:focus, select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0,123,255,0.3);
 }
 
 /* Buttons */
 button {
   width: 100%;
-  padding: 10px;
-  margin-top: 10px;
+  padding: 12px;
+  margin-top: 12px;
   background: #007bff;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 button:hover {
   background: #0056b3;
+  transform: scale(1.02);
 }
 
 /* Dashboard */
 .dashboard {
-  width: 600px;
+  width: 650px;
   margin: 40px auto;
+  padding: 20px;
+}
+
+/* Search & Reset Buttons Row */
+.dashboard button {
+  margin-right: 5px;
 }
 
 /* List */
 ul {
   margin-top: 20px;
+  list-style: none;
 }
 
 li {
-  background: #fff;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 5px;
+  background: white;
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: 0.2s;
+}
+
+li:hover {
+  transform: scale(1.02);
 }
 
 /* Delete button */
 .delete-btn {
-  background: red;
+  background: #dc3545;
+  width: auto;
+  padding: 6px 10px;
 }
 
 .delete-btn:hover {
-  background: darkred;
+  background: #a71d2a;
 }
 
-/* Logout */
+/* Logout button */
 .logout-btn {
+  background: #333;
+  margin-bottom: 15px;
+}
+
+.logout-btn:hover {
   background: black;
-  margin-bottom: 10px;
+}
+
+/* Responsive (important for marks) */
+@media (max-width: 700px) {
+  .dashboard {
+    width: 90%;
+  }
+
+  .container {
+    width: 90%;
+  }
 }
