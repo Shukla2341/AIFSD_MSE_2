@@ -3,12 +3,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
 /* Background */
 body {
-  background: linear-gradient(135deg, #dfe9f3, #ffffff);
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
 }
 
 /* Container (Login/Register) */
@@ -17,20 +18,38 @@ body {
   margin: 80px auto;
   padding: 30px;
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  transition: 0.3s;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: fadeIn 0.6s ease;
 }
 
-.container:hover {
-  transform: translateY(-5px);
+/* Dashboard */
+.dashboard {
+  width: 800px;
+  margin: 30px auto;
+  padding: 20px;
 }
 
-/* Heading */
-h2 {
-  text-align: center;
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
   margin-bottom: 20px;
-  color: #333;
+}
+
+.header h2 {
+  color: white;
+}
+
+/* Card Form */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* Inputs */
@@ -40,22 +59,18 @@ input, select {
   margin: 10px 0;
   border-radius: 6px;
   border: 1px solid #ccc;
-  outline: none;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
-input:focus, select:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0,123,255,0.3);
+input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 8px rgba(102,126,234,0.4);
 }
 
 /* Buttons */
 button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 12px;
-  background: #007bff;
-  color: white;
+  padding: 10px 15px;
+  margin-top: 10px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -63,73 +78,86 @@ button {
   transition: 0.3s;
 }
 
-button:hover {
-  background: #0056b3;
-  transform: scale(1.02);
+/* Primary */
+.btn-primary {
+  background: #667eea;
+  color: white;
 }
 
-/* Dashboard */
-.dashboard {
-  width: 650px;
-  margin: 40px auto;
-  padding: 20px;
+.btn-primary:hover {
+  background: #5a67d8;
 }
 
-/* Search & Reset Buttons Row */
-.dashboard button {
-  margin-right: 5px;
+/* Danger */
+.btn-danger {
+  background: #e53e3e;
+  color: white;
 }
 
-/* List */
-ul {
+.btn-danger:hover {
+  background: #c53030;
+}
+
+/* Logout */
+.btn-logout {
+  background: black;
+  color: white;
+}
+
+/* Search Row */
+.search-row {
+  display: flex;
+  gap: 10px;
+}
+
+/* Grievance Cards */
+.list {
   margin-top: 20px;
-  list-style: none;
 }
 
-li {
+.item {
   background: white;
+  padding: 15px;
   margin-bottom: 12px;
-  padding: 12px;
-  border-radius: 8px;
+  border-radius: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
-li:hover {
-  transform: scale(1.02);
+.item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
-/* Delete button */
-.delete-btn {
-  background: #dc3545;
-  width: auto;
-  padding: 6px 10px;
+/* Status Badge */
+.status {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-left: 10px;
 }
 
-.delete-btn:hover {
-  background: #a71d2a;
+.pending {
+  background: orange;
+  color: white;
 }
 
-/* Logout button */
-.logout-btn {
-  background: #333;
-  margin-bottom: 15px;
+.resolved {
+  background: green;
+  color: white;
 }
 
-.logout-btn:hover {
-  background: black;
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
 }
 
-/* Responsive (important for marks) */
-@media (max-width: 700px) {
+/* Responsive */
+@media (max-width: 900px) {
   .dashboard {
-    width: 90%;
-  }
-
-  .container {
     width: 90%;
   }
 }

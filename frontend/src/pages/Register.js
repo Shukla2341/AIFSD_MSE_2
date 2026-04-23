@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function Register() {
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -23,12 +24,12 @@ export default function Register() {
       alert("Registered Successfully");
       navigate("/login");
     } catch (err) {
-      alert(err.response?.data?.msg || "Error occurred");
+      alert(err.response?.data?.msg || "Error");
     }
   };
 
   return (
-    <div>
+    <div className="container">
       <h2>Register</h2>
 
       <form onSubmit={handleSubmit}>
@@ -36,14 +37,12 @@ export default function Register() {
           name="name"
           placeholder="Name"
           onChange={handleChange}
-          required
         />
 
         <input
           name="email"
           placeholder="Email"
           onChange={handleChange}
-          required
         />
 
         <input
@@ -51,10 +50,9 @@ export default function Register() {
           name="password"
           placeholder="Password"
           onChange={handleChange}
-          required
         />
 
-        <button type="submit">Register</button>
+        <button className="btn-primary">Register</button>
       </form>
     </div>
   );
